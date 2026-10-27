@@ -24,10 +24,15 @@
 
 ## 글꼴
 
-- 제목: Georgia, "AppleMyungjo", serif — 굵기 400, 자간 -0.02em
-- 본문: -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif — 줄간격 1.7, `word-break: keep-all`
+- 제목: "Cormorant Garamond"(영문) + "Noto Serif KR"(한글) — Google Fonts, 굵기 500, 자간 -0.02em
+- 본문: Pretendard Variable (jsDelivr CDN) — 16px, 줄간격 1.75, `word-break: keep-all`
 - 크기 스케일: **12 / 14 / 16 / 20 / 24 / 32 / 48 / 64px** (히어로 제목만 `clamp()` 허용)
-- 최소 글씨 12px. 영문 대문자 라벨(eyebrow)은 12px, 자간 0.16em
+- 역할: 본문 16 · 보조 글씨 14 · 영문 라벨 12(앞에 24px 선) · 섹션 제목 48(모바일 32) · 방문 안내/마무리/후기 제목 64(모바일 48)
+
+## 섹션 레이아웃
+
+- 무드 소개 7:5 비대칭, 방문 안내 5:7 비대칭(큰 타이포), FAQ 가운데 좁은 폭, 마무리 큰 타이포 가운데
+- 부위 선택: PC 4열 격자, 모바일은 옆으로 넘기는 줄(scroll-snap)
 
 ## 여백
 
