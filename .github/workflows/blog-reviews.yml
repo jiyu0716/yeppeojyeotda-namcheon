@@ -1,0 +1,33 @@
+name: 네이버 블로그 후기 불러오기
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # 매일 오전 9시 (한국 시간)
+  workflow_dispatch: # Actions 화면에서 "Run workflow"로 바로 실행
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 블로그 후기 받기
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+        run: python3 scripts/fetch_blog_reviews.py
+
+      - name: 바뀐 내용이 있으면 저장
+        run: |
+          if git diff --quiet -- blog-reviews.json; then
+            echo "변경 없음"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blog-reviews.json
+          git commit -m "Update Naver blog reviews"
+          git push

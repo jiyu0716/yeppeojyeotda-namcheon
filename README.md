@@ -13,3 +13,10 @@
 - 예약 문의는 안내 창과 문의 문구 복사 기능입니다. 실제 예약 채널은 아직 연결되지 않았습니다.
 - 확인되지 않은 세부 프로그램, 가격, 시간은 확인 필요로 표시합니다.
 - AI 및 스톡 이미지는 실제 샵·고객·관리 결과를 나타내지 않습니다. 이미지 출처는 `PHOTO-CREDITS.md`를 확인하세요.
+
+## 블로그 후기 자동 불러오기
+
+- 매일 오전 9시(한국 시간) GitHub Actions(`.github/workflows/blog-reviews.yml`)가 네이버 검색 API로 "예뻐졌다 남천점" 블로그 글을 찾아 `blog-reviews.json`에 저장합니다.
+- 제목·요약에 "예뻐졌다"와 "남천"이 모두 들어간 글만 최대 9개 보여 줍니다. 글이 없으면 블로그 후기 영역은 숨겨집니다.
+- 키는 저장소 Settings → Secrets and variables → Actions의 `NAVER_CLIENT_ID`, `NAVER_CLIENT_SECRET`에 넣습니다. 코드에 키를 적지 않습니다.
+- 바로 갱신하려면 저장소 Actions 탭 → "네이버 블로그 후기 불러오기" → Run workflow.
