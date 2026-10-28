@@ -6,9 +6,8 @@
 
 - 진입 파일: `index.html`
 - GitHub Pages: `main` 브랜치, `/(root)`에서 배포
-- 첫 화면: 스크롤하면 숲 장면이 재생되는 캔버스. `frames/hero/desktop|mobile/0001~0072.webp` (forest-breeze.mp4의 2~5초 구간, 24fps). 첫 장만 미리 받고 나머지는 로드 후 받음. 동작 줄이기 설정이면 한 장면만 표시
-- 원본 영상 forest-breeze.mp4는 프레임을 다시 뽑을 때 쓰는 소스로 남겨 둠
-- 소개 영역: forest-canopy.jpg 숲 사진
+- 첫 화면: 핑크 배경 + 세로 영상 `serum-drop.mp4` (Pexels, Ron Lach). 화면에 보일 때만 재생, 정지 버튼 있음
+- 디자인 기준: `DESIGN.md` (색·글꼴·섹션 구성). 글꼴은 Gmarket Sans(제목)와 Pretendard(본문)를 CDN으로 불러옴
 - 관리 이미지: HTML 안에 포함
 - 텍스트 수정 모드는 제거했습니다. 문구와 디자인 변경은 소스 파일 수정 후 반영합니다.
 - 예약 문의는 안내 창과 문의 문구 복사 기능입니다. 실제 예약 채널은 아직 연결되지 않았습니다.
